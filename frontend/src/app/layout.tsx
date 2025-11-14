@@ -28,9 +28,10 @@ export default async function RootLayout({
 }>) {
   const session = await getServerSession(authOptions);
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-b from-[#050406] via-[#071428] to-[#001219] text-zinc-100`}
+        suppressHydrationWarning
       >
         <Providers session={session}>
           <header className="mx-auto max-w-7xl px-6 py-6">
