@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import GlassCard from "../components/GlassCard";
 
 const Canvas3D = dynamic(() => import("../components/Canvas3D"), {
   ssr: false,
@@ -36,6 +37,17 @@ export default function Home() {
           A minimal demo landing page: responsive, elegant, and styled with a
           dark-to-neon palette. The globe to the right is a live 3D placeholder.
         </p>
+
+        <div className="mt-8 max-w-md">
+          <GlassCard
+            title="Connect globally"
+            subtitle="Encrypted, open, and private"
+            actionLabel="Join"
+            onAction={() => alert('Join clicked')}
+          >
+            <p>Join the private beta and start connecting with communities worldwide.</p>
+          </GlassCard>
+        </div>
       </section>
 
       <aside className="relative hidden w-1/2 flex-1 rounded-2xl bg-gradient-to-br from-transparent via-[#00121a]/30 to-transparent p-4 shadow-2xl lg:block">

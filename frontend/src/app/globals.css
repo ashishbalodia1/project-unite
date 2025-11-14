@@ -33,3 +33,30 @@ body {
 .canvas-fg {
   background: radial-gradient(1200px 400px at 10% 10%, rgba(0,246,255,0.035), transparent), radial-gradient(900px 300px at 90% 90%, rgba(107,255,184,0.02), transparent);
 }
+
+@layer components {
+  .glass-card {
+    @apply relative rounded-2xl border border-white/6 bg-white/4 backdrop-blur-md-plus p-6 overflow-hidden shadow-neon transition-all duration-300 ease-smooth;
+  }
+
+  .glass-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 12px 40px rgba(0,255,255,0.06), 0 0 30px rgba(138,43,226,0.05);
+  }
+
+  .glow-btn {
+    @apply inline-flex items-center gap-3 rounded-full px-5 py-2 font-semibold text-white;
+    background-image: linear-gradient(90deg, theme('colors.neon-cyan') 0%, theme('colors.electric-purple') 100%);
+    box-shadow: 0 8px 30px rgba(0,255,255,0.08), 0 0 20px rgba(138,43,226,0.06);
+    transition: transform 220ms var(--tw-transition-timing-function), box-shadow 220ms var(--tw-transition-timing-function), opacity 220ms var(--tw-transition-timing-function);
+  }
+
+  .glow-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    opacity: 0.98;
+  }
+}
+
+@layer utilities {
+  .ease-smooth { transition-timing-function: cubic-bezier(.2,.9,.26,1); }
+}
