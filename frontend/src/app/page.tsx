@@ -3,9 +3,7 @@
 import dynamic from "next/dynamic";
 import GlassCard from "../components/GlassCard";
 
-const Canvas3D = dynamic(() => import("../components/Canvas3D"), {
-  ssr: false,
-});
+const Globe = dynamic(() => import("../components/Globe"), { ssr: false });
 
 export default function Home() {
   return (
@@ -52,8 +50,8 @@ export default function Home() {
 
       <aside className="relative hidden w-1/2 flex-1 rounded-2xl bg-gradient-to-br from-transparent via-[#00121a]/30 to-transparent p-4 shadow-2xl lg:block">
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="h-[380px] w-[380px] max-w-full">
-            <Canvas3D />
+            <div className="h-[380px] w-[380px] max-w-full">
+            <Globe />
           </div>
         </div>
       </aside>
