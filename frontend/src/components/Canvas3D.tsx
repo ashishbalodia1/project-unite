@@ -2,10 +2,10 @@
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import { Mesh } from "three";
+import { Mesh, Group } from "three";
 
 function Globe() {
-  const group = useRef<THREE.Group | null>(null);
+  const group = useRef<Group | null>(null);
   const wire = useRef<Mesh | null>(null);
 
   useFrame((state, delta) => {
